@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Uniao Vetores {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o tamanho dos vetores: ");
+        int n = sc.nextInt();
+
+        int[] X = new int[n];
+        int[] Y = new int[n];
+
+        // Leitura do vetor X
+        System.out.println("Preenchendo vetor X:");
+        for (int i = 0; i < n; i++) {
+            X[i] = sc.nextInt();
+        }
+
+        // Leitura do vetor Y
+        System.out.println("Preenchendo vetor Y:");
+        for (int i = 0; i < n; i++) {
+            Y[i] = sc.nextInt();
+        }
+
+        ArrayList<Integer> Z = new ArrayList<>();
+
+        // União sem repetição
+        for (int valor : X) {
+            if (!Z.contains(valor)) {
+                Z.add(valor);
+            }
+        }
+
+        for (int valor : Y) {
+            if (!Z.contains(valor)) {
+                Z.add(valor);
+            }
+        }
+
+        // Exibindo
+        System.out.println("Vetor união Z:");
+        for (int valor : Z) {
+            System.out.print(valor + " ");
+        }
+
+        sc.close();
+    }
+}
